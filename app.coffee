@@ -75,12 +75,10 @@ title_page = new PageComponent
 		left: c_inset
 		right: c_inset
 	
-print "titles lenght is #{titles.length}"
 
 for i in [0...titles.length]
 	print  "the title is #{i}"
 	title = new Layer
-		all_titles.push[title]
 		parent: title_page.content
 		width: c_width
 		html: titles[i]
@@ -93,13 +91,10 @@ for i in [0...titles.length]
 			textAlign: "center"
 			letterSpacing: "6px"
 			color: "black"
-
+	all_titles.push(title)
 		
 
 
-
-
-print all_titles.length
 
 post_page.onChange "currentPage" ,->
 	index = post_page.currentPage.index - 1
